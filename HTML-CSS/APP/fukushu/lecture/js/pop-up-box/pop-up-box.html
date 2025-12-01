@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modal</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0 auto;
+                max-width: 1000px;
+                font-size: 1.4em;
+            }
+            .content {
+                padding: 20px;
+            }
+            .show-modal {
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+            }
+            .backdrop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                opacity: 0.8;
+                display: none;
+                transition: display 0.3s ease-in-out;
+            }
+            .modal {
+                position: absolute;
+                width: 40%;
+                top: -25%;
+                left: 30%;
+                height: 200px;
+                background-color: #222;
+                border-radius: 15px;
+                transition: top 0.3s ease-in-out;
+                /* display: none; */
+            }
+
+            .modal h3 {
+                font-size: 1em;
+                font-weight: normal;
+                color: white;
+                background-color: black;
+                margin: 0;
+                padding: 10px 20px;
+                border-radius: 15px 15px 0 0;
+            }
+
+            .modal p {
+                color: white;
+                padding: 20px;
+            }
+
+            .modal h3 a {
+                text-decoration: none;
+                color: red;
+                font-weight: normal;
+                float: right;
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Home Page</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Molestias quam officiis tempora ipsum delectus quis fugiat ut ab
+                maiores facilis, quos eos perspiciatis corrupti, laborum, non
+                nulla nesciunt culpa aliquam?
+            </p>
+            <button class="show-modal" onclick="show()">Click Me</button>
+            <div class="backdrop" onclick="hide()"></div>
+            <div class="modal">
+                <h3>Modal Title <a href="#" onclick="hide()">&times;</a></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam, quidem.
+                </p>
+            </div>
+        </div>
+        <script>
+            const showModal = document.querySelector(".show-modal");
+            const backdrop = document.querySelector(".backdrop");
+            const modal = document.querySelector(".modal");
+            const closeModal = document.querySelector(".modal h3 a");
+
+            function show() {
+                backdrop.style.display = "block";
+                modal.style.top = "15%";
+            }
+
+            function hide() {
+                backdrop.style.display = "none";
+                modal.style.top = "-25%";
+            }
+        </script>
+    </body>
+</html>

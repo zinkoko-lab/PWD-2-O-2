@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                height: 2000px;
+                background: linear-gradient(45deg, blue, green);
+            }
+            .box1 {
+                background: cyan;
+                width: 300px;
+                height: 200px;
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                z-index: 2;
+                opacity: 0.7;
+            }
+            .box2 {
+                background: yellow;
+                width: 300px;
+                height: 200px;
+                /* position: absolute; */
+                position: fixed;
+                left: 150px;
+                top: 150px;
+            }
+            .box3 {
+                background: lightseagreen;
+                width: 300px;
+                height: 200px;
+                position: relative;
+                margin: 500px auto;
+                /* left: 100px;
+                bottom: 100px; */
+            }
+            .box4 {
+                background: lightcoral;
+                width: 150px;
+                height: 100px;
+                position: absolute;
+                left: 50px;
+                top: 50px;
+            }
+            .chat-bot {
+                background: blue;
+                width: 100px;
+                height: 50px;
+                color: white;
+                text-align: center;
+                position: fixed;
+                right: 50px;
+                bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">Box-1</div>
+        <div class="box2">Box-2</div>
+        <div class="box3">
+            <div class="box4">Box-4</div>
+            Box-3
+        </div>
+
+        <div class="chat-bot">Chat with AI-bot</div>
+    </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            defer
+        ></script>
+    </head>
+    <body>
+        <div class="navbar bg-primary navbar-dark navbar-expand">
+            <div class="container">
+                <a href="#" class="navbar-brand"
+                    ><i class="fa-regular fa-camera me-2"></i>APP</a
+                >
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active"
+                            ><i class="fa-regular fa-house me-1"></i>Home</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"
+                            ><i class="fa-regular fa-circle-question"></i
+                            >About</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"
+                            ><i class="fa-regular fa-envelope"></i>Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <ul class="nav nav-tabs my-4">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fa-solid fa-users me-2"></i>
+                        All Users
+                        <span class="badge bg-danger rounded-pill ms-2"
+                            >10</span
+                        >
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">New Users</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                        href="#"
+                        class="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        >Other Users</a
+                    >
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">Weekly Users</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Monthly Users</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Yearly Users</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="alert alert-danger">
+                primary, secondary, info, success, warning, danger, dark
+            </div>
+
+            <form class="mb-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label
+                    ><input id="name" type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label
+                    ><textarea id="address" class="form-control"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-select">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </div>
+                <button class="btn btn-secondary">
+                    <i class="fa-solid fa-backward me-2"></i>Go Back
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa-solid fa-paper-plane me-2"></i>Send
+                </button>
+            </form>
+
+            <div class="card mb-3 bg-success text-light">
+                <div class="card-header">Card Header</div>
+                <div class="card-body">Card Body</div>
+                <div class="card-footer">Card Footer</div>
+            </div>
+
+            <table class="table table-bordered table-striped-columns">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Alice</td>
+                    <td>Male</td>
+                    <td>London</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                    <td>Male</td>
+                    <td>NewYork</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mituski</td>
+                    <td>Femal</td>
+                    <td>Osaka</td>
+                </tr>
+            </table>
+
+            <h3>代表的なマークアップ言語</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong> HTML (HyperText Markup Language):</strong>
+
+                    ウェブページの構造やデザインを記述し、ウェブブラウザで表示するために使用されます。
+                </li>
+                <li class="list-group-item">
+                    <strong> XML (eXtensible Markup Language)</strong>
+                    :データの構造や意味を定義するために使われます。設定ファイルやデータ交換用フォーマットとして広く利用されており、タグは自由に定義できます。
+                </li>
+                <li class="list-group-item">
+                    <strong> XHTML</strong>
+                    :HTMLの厳密なバージョンで、XMLの文法規則を適用したものです。より厳密なルールに基づいています。
+                </li>
+                <li class="list-group-item">
+                    <strong> Markdown</strong>
+                    :シンプルな記法で文章の構造を指定でき、学習しやすく読みやすいのが特徴です。Markdownファイルは、HTMLやPDFなどへ変換して利用されます。
+                </li>
+                <li class="list-group-item">
+                    <strong> TeX</strong>
+                    :学術分野で、図表や数式を含む印刷物を作成する際に、レイアウトを意図通りに整えるために使われます。
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

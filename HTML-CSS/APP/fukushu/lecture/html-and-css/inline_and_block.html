@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div.wrap {
+                display: flex;
+            }
+            .wrap div {
+                flex-grow: 1;
+                height: 200px;
+                background: cyan;
+                margin: 10px;
+                text-align: center;
+                line-height: 200px;
+                border: none;
+            }
+            .wrap div:first-child {
+                flex-grow: 2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+        </div>
+    </body>
+</html>

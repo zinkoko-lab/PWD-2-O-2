@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Admin</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row g-0" style="min-height: 1000px">
+                <!-- Navigation Column -->
+                <nav class="col-2 bg-light pe-2">
+                    <h1 class="h4 text-center text-primary py-3">
+                        <i class="fas fa-ghost me-1"></i>
+                        <span class="d-none d-lg-inline">Admin</span>
+                    </h1>
+                    <div class="list-group mb-4 text-center text-lg-start">
+                        <a href="#" class="list-group-item disabled">
+                            <span class="d-none d-lg-inline">CONTROLS</span>
+                        </a>
+                        <a href="#" class="list-group-item text-light active">
+                            <i class="far fa-home me-2"></i
+                            ><span class="d-none d-lg-inline">Dashboard</span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fas fa-users me-2"></i
+                            ><span class="d-none d-lg-inline">Users</span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa-solid fa-chart-line me-2"></i
+                            ><span class="d-none d-lg-inline">Statistics</span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa-solid fa-flag me-2"></i
+                            ><span class="d-none d-lg-inline">Reports</span>
+                        </a>
+                    </div>
+                    <div class="list-group mb-4 text-center text-lg-start">
+                        <a href="#" class="list-group-item disabled"
+                            ><span class="d-none d-lg-inline">ACTIONS</span></a
+                        >
+                        <a href="#" class="list-group-item"
+                            ><i class="fas fa-users me-2"></i
+                            ><span class="d-none d-lg-inline"
+                                >New Users</span
+                            ></a
+                        >
+                        <a href="#" class="list-group-item"
+                            ><i class="far fa-home me-2"></i
+                            ><span class="d-none d-lg-inline"
+                                >Update Data</span
+                            ></a
+                        >
+                        <a href="#" class="list-group-item"
+                            ><i class="fas fa-chart-line me-2"></i
+                            ><span class="d-none d-lg-inline">Add</span></a
+                        >
+                    </div>
+                </nav>
+
+                <main class="col-10 bg-secondary">
+                    <!-- Navigation bar -->
+                    <nav class="navbar navbar-expand-lg bg-light mb-3">
+                        <div class="flex-fill"></div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a
+                                    href="#"
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    ><i class="fa-solid fa-user-circle"></i
+                                ></a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li class="dropdown-item">User Profile</li>
+                                    <li class="dropdown-item">Logout</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link"
+                                    ><i class="fa-solid fa-cog"></i
+                                ></a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Software Update -->
+                    <div class="container-flud my-3 mx-auto px-4">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="alert alert-info">
+                                    <i class="fas fa-download me-2"></i
+                                    ><span
+                                        >A new version of admin dashboard is
+                                        released.</span
+                                    >
+                                    <a href="#">Download Now!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div
+                        class="container row flex-column flex-lg-row mx-auto mb-3 px-4"
+                    >
+                        <h2 class="h6 text-muted">QUICK STATS</h2>
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">1,250</h3>
+                                    <span class="text-success"
+                                        ><i class="fas fa-chart-line me-2"></i
+                                        >Daily Visitors</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">8,210</h3>
+                                    <span class="text-success"
+                                        ><i class="fas fa-chart-line me-2"></i
+                                        >Weekly Visitors</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">12,650</h3>
+                                    <span class="text-success"
+                                        ><i class="fas fa-chart-line me-2"></i
+                                        >Monthly Visitors</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">102,250</h3>
+                                    <span class="text-success"
+                                        ><i class="fas fa-chart-line me-2"></i
+                                        >Monthly Visitors</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location & Data Blocks -->
+                    <div class="row mx-auto mb-3 px-4 flex-column flex-lg-row">
+                        <div class="col mx-auto">
+                            <h2 class="h6 text-muted">LOCATION</h2>
+                            <div
+                                class="card mb-3 p-3 bg-light-subtle"
+                                style="height: 280px"
+                            >
+                                <small class="text-muted">Regional</small>
+                                <div
+                                    class="progress mb-4 mt-2"
+                                    style="height: 5px"
+                                >
+                                    <div
+                                        class="progress-bar bg-success w-25"
+                                    ></div>
+                                </div>
+                                <small class="text-muted">Global</small>
+                                <div
+                                    class="progress mb-4 mt-2"
+                                    style="height: 5px"
+                                >
+                                    <div
+                                        class="progress-bar bg-primary w-75"
+                                    ></div>
+                                </div>
+                                <small class="text-muted">Local</small>
+                                <div
+                                    class="progress mb-4 mt-2"
+                                    style="height: 5px"
+                                >
+                                    <div
+                                        class="progress-bar bg-warning w-50"
+                                    ></div>
+                                </div>
+                                <small class="text-muted">Internal</small>
+                                <div
+                                    class="progress mb-4 mt-2"
+                                    style="height: 5px"
+                                >
+                                    <div
+                                        class="progress-bar bg-danger w-25"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mx-auto">
+                            <h2 class="h6 text-muted">TABLE</h2>
+                            <div
+                                class="card mb-3 p-3 bg-light-subtle"
+                                style="height: 280px"
+                            >
+                                <div class="text-end">
+                                    <button
+                                        class="btn btn-sm btn-outline-secondary me-1"
+                                    >
+                                        <i class="fas fa-search"></i></button
+                                    ><button
+                                        class="btn btn-sm btn-outline-secondary me-1"
+                                    >
+                                        <i
+                                            class="fas fa-sort-amount-up"
+                                        ></i></button
+                                    ><button
+                                        class="btn btn-sm btn-outline-secondary me-1"
+                                    >
+                                        <i class="fas fa-filter"></i>
+                                    </button>
+                                </div>
+
+                                <table class="table table-hover mt-2 p-2">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Age Group</th>
+                                            <th>Data</th>
+                                            <th>Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>20~30</td>
+                                            <td>19%</td>
+                                            <td>
+                                                <i class="fas fa-chart-pie"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>30~40</td>
+                                            <td>40%</td>
+                                            <td>
+                                                <i class="fas fa-chart-bar"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>30~40</td>
+                                            <td>20%</td>
+                                            <td>
+                                                <i
+                                                    class="fas fa-chart-line"
+                                                ></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>50~</td>
+                                            <td>11%</td>
+                                            <td>
+                                                <i class="fas fa-chart-pie"></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
+        "></script>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+body {
+    background: radial-gradient(
+        circle,
+        rgba(63, 94, 251, 1) 0%,
+        rgba(252, 70, 107, 1) 100%
+    );
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #212529;
+    color: white;
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    margin: 0 20px;
+}
+
+header ul li a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header a:hover {
+    cursor: pointer;
+    color: #dc3545;
+}
+
+.first-view {
+    background-image: url(./sgcdesignco-NIo8Fd-RngE-unsplash.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+    text-align: center;
+    padding: 200px 150px;
+    color: white;
+}
+
+.first-view .catch-copy {
+    margin-bottom: 30px;
+    text-shadow: 0px 0px 15px black;
+}
+
+.first-view .catch-copy h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.first-view .catch-copy p {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.first-view a {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: #dc3545;
+    border-radius: 5px;
+    transition: background 0.5s;
+}
+
+.first-view a:hover {
+    background: #fc5249;
+}
+
+.about-us {
+    padding: 40px 120px;
+    color: white;
+}
+
+.about-us h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.about-us ul {
+    display: flex;
+}
+
+.about-us ul li h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-us ul li {
+    margin: 0px 15px;
+}
+
+.work {
+    padding: 40px 120px;
+    color: white;
+}
+
+.work h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.work ul {
+    display: flex;
+}
+
+.work ul li {
+    margin: 0px 15px;
+}

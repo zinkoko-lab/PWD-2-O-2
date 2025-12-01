@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .container {
+                position: relative;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                opacity: 0.3;
+            }
+
+            .top-left {
+                position: absolute;
+                top: 8px;
+                left: 16px;
+            }
+
+            .bottom-left {
+                position: absolute;
+                bottom: 8px;
+                left: 16px;
+            }
+
+            .top-right {
+                position: absolute;
+                top: 8px;
+                right: 16px;
+            }
+
+            .bottom-right {
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+            }
+
+            .center {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Position Text on Image</h1>
+        <div class="container">
+            <img
+                src="img_5terre_wide.jpg"
+                alt="Cinque Terre"
+                width="1000"
+                height="300"
+            />
+            <p class="top-left">Top Left</p>
+            <p class="bottom-left">Bottom Left</p>
+            <p class="top-right">Top Right</p>
+            <p class="bottom-right">Top Left</p>
+            <p class="center">Center</p>
+        </div>
+    </body>
+</html>

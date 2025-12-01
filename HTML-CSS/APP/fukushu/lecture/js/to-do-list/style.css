@@ -1,0 +1,11 @@
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.fa-solid {
+    pointer-events: none;
+}

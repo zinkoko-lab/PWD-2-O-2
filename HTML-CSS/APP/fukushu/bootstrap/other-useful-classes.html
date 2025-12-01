@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <div class="container-fluid bg-secondary py-5 mb-3">
+            <div class="container">
+                <div class="bg-light" style="height: 400px"></div>
+            </div>
+        </div>
+        <div class="container mb-3">
+            <p
+                class="border border-2 border-primary rounded-pill text-center px-3 py-1"
+            >
+                Some Content
+            </p>
+            <div class="p-5 bg-dark bg-gradient text-light">
+                This div has a primary background with a subtle gradient.
+            </div>
+            <p class="d-none d-md-block">other content</p>
+        </div>
+        <div
+            class="container d-flex flex-column flex-md-row gap-5 text-center mb-3"
+        >
+            <div class="bg-primary p-5" style="height: 200px"></div>
+            <div class="bg-primary p-5 flex-fill" style="height: 200px"></div>
+        </div>
+        <div class="container bg-warning p-4 clearfix mb-5">
+            <h1 class="float-md-start">Some Title</h1>
+            <h2 class="float-md-end">Some subtitle</h2>
+        </div>
+        <div class="container bg-dark mb-5" style="height: 300px">
+            <div class="h-50 w-50 bg-light">Child in div</div>
+        </div>
+        <div class="container">
+            <p
+                class="mx-5 text-dark text-decoration-underline lh-lg"
+                style="text-align: justify"
+            >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                culpa perferendis numquam consequuntur beatae temporibus
+                necessitatibus, velit itaque earum impedit ad similique
+                deleniti, odio natus, unde blanditiis odit voluptates optio
+                fugit veritatis! Nobis eius labore similique rem modi, aliquam
+                voluptates laboriosam ea sunt? Vel, quas alias inventore
+                similique laboriosam est reprehenderit officiis perspiciatis
+                asperiores deserunt velit quibusdam iste ullam. Doloribus minima
+                mollitia dolorem odio? Magnam dolor obcaecati vero dolore vitae
+                voluptates quasi, enim neque expedita fugiat accusantium dolorum
+                molestias odit aut odio quisquam eum consequatur sapiente!
+                Laboriosam, suscipit delectus. Dolore beatae fugit reprehenderit
+                ex aspernatur consequuntur nam fuga aperiam quaerat.
+            </p>
+        </div>
+
+        <!-- Position -->
+        <div
+            class="container position-relative bg-dark mb-5"
+            style="height: 200px"
+        >
+            <div
+                class="position-absolute bg-light top-50 start-50 w-25 h-25 translate-middle"
+            ></div>
+        </div>
+
+        <!-- Position Example in Button Notification -->
+        <div class="container mb-5">
+            <button class="btn btn-primary">
+                Goto User List
+                <span class="badge rounded-pill bg-danger ms-2">10</span>
+            </button>
+            <hr />
+            <button class="btn btn-primary position-relative">
+                Goto User List
+                <span
+                    class="badge rounded-pill bg-danger position-absolute top-0 start-100"
+                    >99+</span
+                >
+            </button>
+            <hr />
+            <button class="btn btn-primary position-relative">
+                Goto User List
+                <span
+                    class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle"
+                    >99+</span
+                >
+            </button>
+        </div>
+
+        <!-- Shadow -->
+        <div class="container">
+            <div class="border p-4 mb-4 bg-light shadow-sm">Some Content</div>
+            <div class="border p-4 mb-4 bg-light shadow">Some Content</div>
+            <div class="border p-4 mb-4 bg-light shadow-lg">Some Content</div>
+        </div>
+
+        <!-- icons -->
+        <div class="container mb-5 text-center">
+            <i class="fa-solid fa-camera fa-2x text-primary"></i>
+            <i class="fa-regular fa-camera fa-3x text-danger"></i>
+            <i class="fa-brands fa-github fa-4x text-success"></i>
+            <i class="fa-brands fa-google fa-4x text-success"></i>
+            <i class="fa-brands fa-google-drive fa-4x text-primary"></i>
+            <i class="fa-brands fa-facebook fa-4x text-primary"></i>
+            <i class="fa-brands fa-apple fa-4x text-dark"></i>
+            <i class="fa-brands fa-amazon fa-4x text-dark"></i>
+            <i class="fa-brands fa-aws fa-4x text-dark"></i>
+            <i class="fa-brands fa-youtube fa-4x text-dark"></i>
+        </div>
+
+        <div class="container mb-5">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active"
+                        ><i class="fas fa-list"></i>All Users</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"
+                        ><i class="fas fa-users"></i>New Users</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"
+                        ><i class="fas fa-user"></i>Ohter Users</a
+                    >
+                </li>
+            </ul>
+        </div>
+
+        <div class="container mb-5">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <i class="fas fa-square"></i>
+                    Something to do
+                    <i class="fas fa-trash float-end text-danger"></i>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <i class="fas fa-check"></i>
+                    Something to do
+                    <i class="fas fa-trash float-end text-danger"></i>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <i class="fas fa-check"></i>
+                    Something to do
+                    <i class="fas fa-trash float-end text-danger"></i>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container mb-5" style="width: 700px">
+            <form>
+                <div class="mb-2">
+                    <label for="name"
+                        ><i class="fas fa-user me-2"></i>User Name</label
+                    >
+                    <input type="text" id="name" class="form-control" />
+                </div>
+                <div class="mb-2">
+                    <label for="name"
+                        ><i class="fas fa-envelope me-2"></i>Email</label
+                    >
+                    <input type="email" id="email" class="form-control" />
+                </div>
+                <div class="mb-2">
+                    <label for="password"
+                        ><i class="fas fa-lock me-2"></i>Password</label
+                    >
+                    <input type="password" id="password" class="form-control" />
+                </div>
+                <button class="btn btn-primary">
+                    <i class="fas fa-paper-plane me-2"></i>Register
+                </button>
+            </form>
+        </div>
+
+        <div class="container mb-5">
+            <table class="table table-bordered table-strped">
+                <tr>
+                    <th><i class="fas fa-hashtag"></i>ID</th>
+                    <th><i class="fas fa-bug"></i>issue</th>
+                    <th><i class="fas fa-calendar"></i>Date</th>
+                    <th><i class="fas fa-sort-amount-down"></i>Level</th>
+                    <th><i class="fas fa-user"></i>Assign</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>A problem with something</td>
+                    <td>2025-11-8</td>
+                    <td>
+                        <span class="badge bg-danger rounded-pill"
+                            >critical</span
+                        >
+                    </td>
+                    <td>Alice</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Another problem with...</td>
+                    <td>2025-11-8</td>
+                    <td>
+                        <span class="badge bg-warning rounded-pill"
+                            >import</span
+                        >
+                    </td>
+                    <td>Alice</td>
+                </tr>
+            </table>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

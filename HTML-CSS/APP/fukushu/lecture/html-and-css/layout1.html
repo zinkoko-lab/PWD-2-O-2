@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* div {
+                display: inline;
+            } */
+            /* span {
+                display: block;
+            } */
+            /* div {
+                display: inline-block;
+            }
+            span {
+                display: inline-block;
+            } */
+            .demo1 {
+                background-color: yellow;
+            }
+            .demo2 {
+                background-color: gray;
+            }
+            .demo3 {
+                background-color: aqua;
+            }
+            .demo4 {
+                background-color: lightpink;
+            }
+
+            /* flex demo */
+
+            .wrap {
+                display: flex;
+                gap: 20px;
+                /* flex-direction: column; */
+                /* flex-direction: column|column-reverse|row|row-reverse; */
+                justify-content: center;
+                /* justify-content: space-around; */
+                /* justify-content: flex-end; */
+                /* justify-content: flex-start; */
+                align-items: center;
+                width: 1000px;
+                height: 500px;
+                background: silver;
+            }
+            .box {
+                width: 200px;
+                height: 200px;
+                background: lightsalmon;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="demo1">This is a div-element-1.(block element)</div>
+        <div class="demo2">This is a div-element-2.(block element)</div>
+        <span class="demo3">This is a span-element-1.(inline element)</span>
+        <span class="demo4">This is a span-element-2.(inline element)</span>
+
+        <div class="wrap">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </body>
+</html>

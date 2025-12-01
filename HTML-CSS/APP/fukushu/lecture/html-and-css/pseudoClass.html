@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            a {
+                color: blue;
+            }
+            a:hover {
+                color: red;
+            }
+            a:active {
+                color: green;
+            }
+            a:visited {
+                color: brown;
+            }
+            ul li:first-child {
+                font-style: bold;
+            }
+            ul li:last-child {
+                font-style: italic;
+            }
+            ul li:nth-child(3) {
+                color: red;
+            }
+            ul li:nth-child(2n) {
+                background: cyan;
+            }
+            div:empty {
+                outline: 2px solid deeppink;
+                height: 1em;
+            }
+
+            .container {
+                width: 1000px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border: 1px solid red;
+                padding: 5px;
+            }
+
+            .box {
+                background: pink;
+                height: 80px;
+                width: 80px;
+            }
+
+            .box:empty {
+                background: lime;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#one">Link One</a>
+        <a href="#two">Link Two</a>
+
+        <ul>
+            <li>Item One</li>
+            <li>Item Two</li>
+            <li>Item Three</li>
+            <li>Item Four</li>
+            <li>Item Five</li>
+        </ul>
+
+        <!-- empty -->
+        <p>コンテンツのない要素:</p>
+        <div></div>
+
+        <p>コメントのある要素:</p>
+        <div><!-- コメント --></div>
+
+        <p>内部に空の要素を持つ要素:</p>
+        <div><p></p></div>
+
+        <div class="container">
+            <div class="box"><!-- ライム色になります。 --></div>
+            <div class="box">ピンク色になります。</div>
+            <div class="box">
+                <!-- このコメントの周囲には空白があるため、古いブラウザーではピンク色になります。 -->
+            </div>
+            <div class="box">
+                <p>
+                    <!-- このコメントの周囲には統合することができない空白や要素があるため、すべてのブラウザーでピンク色で表示されます。 -->
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

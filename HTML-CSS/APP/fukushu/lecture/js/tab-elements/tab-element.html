@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Two Tab Elements by JavaScript</title>
+        <style>
+            ul.tabs {
+                list-style: none;
+                display: flex;
+                gap: 8px;
+                background: #222;
+                margin: 0;
+                padding: 0px 10px;
+            }
+
+            .tab {
+                padding: 5px 30px;
+                margin: 20px 10px 0px 0px;
+            }
+
+            #tab-one {
+                background: lightseagreen;
+                border-radius: 5px 5px 0 0;
+                cursor: pointer;
+            }
+
+            #tab-two {
+                background: lightcoral;
+                opacity: 0.5;
+                border-radius: 5px 5px 0 0;
+                cursor: pointer;
+            }
+
+            .box {
+                min-height: 300px;
+                padding: 20px;
+                border: 4px solid #222;
+                border-top: none;
+                margin-top: 0;
+            }
+
+            #box-one {
+                background: lightseagreen;
+            }
+
+            #box-two {
+                background: lightcoral;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="tabs">
+            <li class="tab" id="tab-one" onclick="showBoxOne()">Tab One</li>
+            <li class="tab" id="tab-two" onclick="showBoxTwo()">Tab Two</li>
+        </ul>
+        <div class="box" id="box-one">
+            <h3>Box One</h3>
+            <p>
+                This is Box One. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </p>
+        </div>
+        <div class="box" id="box-two">
+            <h3>Box Two</h3>
+            <p>
+                This is Box Two. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
+        </div>
+        <script>
+            const tabOne = document.querySelector("#tab-one");
+            const tabTwo = document.querySelector("#tab-two");
+            const boxOne = document.querySelector("#box-one");
+            const boxTwo = document.querySelector("#box-two");
+
+            let showBoxOne = () => {
+                tabOne.style.opacity = 1;
+                tabTwo.style.opacity = 0.5;
+                boxOne.style.display = "block";
+                boxTwo.style.display = "none";
+            };
+
+            let showBoxTwo = () => {
+                tabOne.style.opacity = 0.5;
+                tabTwo.style.opacity = 1;
+                boxOne.style.display = "none";
+                boxTwo.style.display = "block";
+            };
+        </script>
+    </body>
+</html>

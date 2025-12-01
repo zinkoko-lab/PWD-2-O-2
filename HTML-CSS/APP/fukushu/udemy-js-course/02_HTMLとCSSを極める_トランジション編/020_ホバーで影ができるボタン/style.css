@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  margin-top: 50px;
+  text-align: center;
+}
+#container > .btn.float {
+  padding: 10px 40px;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1px solid #222;
+  color: #222;
+}
+#container > .btn.float:hover {
+  box-shadow: 5px 5px 10px #222;
+}/*# sourceMappingURL=style.css.map */

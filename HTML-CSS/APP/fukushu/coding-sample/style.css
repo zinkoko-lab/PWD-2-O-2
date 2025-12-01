@@ -1,0 +1,111 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 50px;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header li {
+  margin: 0px 20px;
+}
+
+header li a {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header ul {
+  display: flex;
+}
+
+header a {
+  transition: color 0.3s;
+}
+
+header a:hover {
+  color: red;
+}
+
+.firstview {
+  padding: 200px 100px;
+  color: white;
+  background-image: url(firstview.jpg);
+  background-position-y: 30%;
+  background-size: cover;
+  font-weight: bold;
+  text-align: center;
+}
+
+.firstview .catchcopy {
+  margin-bottom: 40px;
+  text-shadow: 0px 0px 10px black;
+}
+
+.firstview .catchcopy h1 {
+  font-size: 50px;
+}
+
+.firstview .catchcopy p {
+  font-size: 24px;
+}
+
+.firstview a {
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 18px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+.firstview a:hover {
+  background-color: #FC5249;
+}
+
+.about-us {
+  padding: 40px 120px;
+}
+
+.about-us h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.about-us ul {
+  display: flex;
+}
+
+.about-us li {
+  margin: 0px 15px;
+}
+
+.about-us li h3 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.works {
+  padding: 40px 120px;
+}
+
+.works h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.works ul {
+  display: flex;
+}
+
+.works li {
+  margin: 0px 15px;
+}

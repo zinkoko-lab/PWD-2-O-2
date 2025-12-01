@@ -1,0 +1,50 @@
+JavaScript - Client-Side Script(front-end)
+
+                    request
+Client Side <-----------------------> Server
+                    response
+
+Web-Server => njinx,....
+
+Client => browser,....
+
+Programming Languages --> Compiled(C++, Java, Go, Rust)/ Script(PHP, JavaScript, Python, Ruby)
+
+Type ---> Dynamic Type/ Static Type
+
+Programming Type
+1.Imperative
+2.OOP
+3.Functional
+|
+^
+Pure Function
+
+JavaScript ---> (multi...)
+
+components to extute JavaScript
+1. Rendering Engine(khtml(oss) ---> webkit(by apple) )
+2. JS Engine
+3. UI
+
+Browser War
+
+IE, Firefox (long long ago) ---> IE higher market share
+but IE more bug
+Firefox higher perfomace & less bug
+
+|
+|
+|
+Google ---> Develop a open-source browser called chromium(Rendering Engine(based on webkit and then named blink), JS Engine(v8), UI)
+|
+|
+non open-source browser(chrome)
+
+
+Microsoft developed MicrosoftEdge based on chromium browser
+
+
+DOM = HTML object ---> DOM tree structure ---> html--->( head--->(title, ..), body--->(h1~6,p--->(a),...))
+
+DOM manipultion

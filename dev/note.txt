@@ -1,0 +1,12 @@
+github等でcodeを共有するときはnode_modulesフォルダは不要。
+package.json のファイルの内容にdependencyが記載されている。
+それを元に コマンド　npm i を実行すると、node_modulesフォルダが再現される。
+
+npm init -y             # create package.json file.
+npm i package-name      # install package as dependencies.
+npm i package-name -D   # install package as Dev dependencies.
+npm i                   # install package as dependencies & Dev dependencies.
+
+npx package-name        # run installed package.
+
+npm i -g package-name   # install package globally.(非推奨)

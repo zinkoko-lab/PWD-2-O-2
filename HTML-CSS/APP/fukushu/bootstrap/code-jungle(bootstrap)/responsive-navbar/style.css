@@ -1,0 +1,157 @@
+/* Navbar Style */
+
+.navbar {
+    /* color: rgba(0, 0, 0, 0.7); */
+    /* text-shadow: black 0.1em 0.1em 0.2em; */
+    height: 80px;
+    margin: 0; /* changed: remove top margin so fixed-top sits at the very top */
+    /* border-radius: 30px; */
+    padding: 0.5rem;
+    top: 0; /* 明示的に top を0に */
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+i.bx-tv {
+    color: #ff2c1f;
+    font-size: 3rem;
+}
+
+.login-button {
+    background-color: #ff2c1f;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s background-color;
+}
+
+.login-button:hover {
+    background-color: #a72f2f;
+}
+
+.nav-link {
+    /* color: #fff; */
+    font-weight: 500;
+    position: relative;
+    transition: 0.7s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active:hover {
+    color: #ff2c1f;
+}
+
+@media (min-width: 992px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        transform: translateX(-50%);
+        background: #ff2c1f; /* Underline color */
+        transition: 0.7s ease-in-out;
+        visibility: 0; /* Initially hidden */
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: 1; /* Show underline on hover */
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.btn-close {
+    color: #fff;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Navbar Style End  */
+
+/* ensure page content not hidden behind fixed-top navbar */
+body {
+    /* 調整: navの高さに合わせて必要なら数値を変更 */
+    padding-top: 80px; /* changed: match .navbar height */
+}
+
+/* Carousel Style  */
+
+.carousel-inner,
+.carousel-item {
+    width: 100%;
+}
+
+/* カルーセル画像の高さをビューポート基準で指定し、トリミングしてフィットさせる */
+.carousel-item img {
+    width: 100%;
+    height: calc(100vh - 70px); /* navbar分を引く */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* キャプションの可読性向上 */
+.carousel-caption {
+    right: auto;
+    left: 5%;
+    bottom: 15%;
+    text-align: left;
+    max-width: 55%;
+    padding: 1rem;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.15)
+    );
+    border-radius: 6px;
+}
+
+/* 指示点がキャプションに隠れないようにする */
+.carousel-indicators {
+    z-index: 5;
+}
+
+/* 小画面向けの調整 */
+@media (max-width: 767.98px) {
+    /* 高さを少し下げて重要コンテンツが見えるようにする */
+    .carousel-item img {
+        height: 50vh;
+    }
+    .carousel-caption {
+        left: 5%;
+        right: 5%;
+        bottom: 10%;
+        max-width: 90%;
+        text-align: center;
+    }
+    /* ボタン等の余白微調整 */
+    .carousel-caption .btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* 大きめの画面向け微調整 */
+@media (min-width: 1200px) {
+    .carousel-item img {
+        height: 80vh;
+    }
+    .carousel-caption {
+        max-width: 45%;
+    }
+}

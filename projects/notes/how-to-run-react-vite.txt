@@ -1,0 +1,11 @@
+npm create vite hello-react
+
+
+- React
+- JavaScript
+
+Open `hello-react` with VS Code
+
+npm i
+
+npm run dev

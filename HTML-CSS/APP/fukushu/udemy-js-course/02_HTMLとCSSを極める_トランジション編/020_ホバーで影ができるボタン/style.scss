@@ -1,0 +1,25 @@
+$cWhite: #fff;
+$cBlack: #222;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    margin-top: 50px;
+    text-align: center;
+
+    & > .btn.float {
+        padding: 10px 40px;
+        font-weight: 600;
+        background-color: $cWhite;
+        border: 1px solid $cBlack;
+        color: $cBlack;
+
+        &:hover {
+            box-shadow: 5px 5px 10px $cBlack;
+        }
+    }
+}

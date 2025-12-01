@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Slides</title>
+        <style>
+            .wrap {
+                position: relative;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .wrap button {
+                position: absolute;
+                top: 43%;
+                background: transparent;
+                border: none;
+                font-size: 3rem;
+                color: white;
+                opacity: 0.5;
+            }
+            #prev {
+                left: 30px;
+            }
+            #next {
+                right: 30px;
+            }
+
+            .box {
+                height: 500px;
+                line-height: 500px;
+                text-align: center;
+                font-size: 3rem;
+            }
+            #box1 {
+                background: #333;
+                color: white;
+            }
+            #box2 {
+                background-color: #222;
+                color: white;
+                display: none;
+            }
+            #box3 {
+                background-color: #111;
+                color: white;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <button id="prev">&laquo;</button>
+            <button id="next">&raquo;</button>
+            <div class="box" id="box1">1</div>
+            <div class="box" id="box2">2</div>
+            <div class="box" id="box3">3</div>
+        </div>
+        <script>
+            let box = 1;
+            let next = document.querySelector("#next");
+            let prev = document.querySelector("#prev");
+
+            next.addEventListener("click", () => {
+                document.querySelector(`#box${box}`).style.display = "none";
+                box++;
+                if (box > 3) box = 1;
+                document.querySelector(`#box${box}`).style.display = "block";
+            });
+
+            prev.addEventListener("click", () => {
+                document.querySelector(`#box${box}`).style.display = "none";
+                box--;
+                if (box < 1) box = 3;
+                document.querySelector(`#box${box}`).style.display = "block";
+            });
+        </script>
+    </body>
+</html>
