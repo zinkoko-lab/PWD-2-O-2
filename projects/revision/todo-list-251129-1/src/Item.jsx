@@ -16,7 +16,7 @@ export default function Item({ item, del, toggle }) {
                     <CheckBoxOutlineBlankIcon color="primary" />
                 )}
             </IconButton>
-            <ListItemText>{item.content}</ListItemText>
+            <ListItemText>{item.name}</ListItemText>
             <IconButton>
                 <Del onClick={() => del(item.id)} color="error" />
             </IconButton>

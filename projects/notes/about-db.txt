@@ -1,0 +1,23 @@
+Database (RDBMS)
+- MySQL *
+- MSSQL
+- Oracle
+- PgSQL (JSON) *
+-----
+- SQLite *
+
+- Structure (Table, Relationship)
+- Student Table (rollno, name, phone, grade, room)
+
+Database (NoSQL)
+- MongoDB (document)
+- Redis (key=value)
+- Cassandra
+- Neo4j
+
+- Unstructure
+- Facebook Post (text, media, tags, feeling, activity, sticker, checkin)
+
+ORM (Object Relational Mapping)
+- ORM = MySQL -> MongoDB
+- ORM => SQLite

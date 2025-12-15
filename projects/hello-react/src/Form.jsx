@@ -12,7 +12,7 @@ export default function Form({ add }) {
         <form
             onSubmit={(e) => {
                 e.preventDefault();
-                add(inputRef.current.value);
+                add(inputRef.current.value.trim());
                 e.currentTarget.reset();
             }}
         >

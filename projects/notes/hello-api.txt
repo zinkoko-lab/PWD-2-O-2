@@ -1,0 +1,10 @@
+creating an API
+
+npm i express cors (express is for API)
+npm i tsx @types/node @types/express -D (to run TypeScript program, -D development dependencies)
+
+add codes below to package.json:
+"type": "module",
+"scripts": {
+"dev": "tsx watch index.ts"
+},

@@ -1,24 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./Form";
 import Item from "./Item";
 import Header from "./Header";
 import { Container, Divider, List, Typography } from "@mui/material";
 
 function App() {
-    const [data, setData] = useState([
-        { id: 3, content: "To Study JavaScript", done: false },
-        { id: 2, content: "To Study CSS", done: false },
-        { id: 1, content: "To Study HTML", done: true },
-    ]);
+    const [data, setData] = useState([]);
 
-    // const [data, setData] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:8800/tasks").then((res) => {
+            res.json().then((tasks) => {
+                setData(tasks);
+            });
+        });
+    }, []);
 
-    const add = (content) => {
+    const add = (name) => {
         const id = data[0] ? data[0].id + 1 : 1;
-        if (content == "") {
+        if (name == "") {
             return false;
         }
-        setData([{ id, content, done: false }, ...data]);
+        setData([{ id, name, done: false }, ...data]);
         console.log(data);
     };
 
@@ -41,13 +43,13 @@ function App() {
         <>
             <Header count={data.filter((item) => !item.done).length} />
             <Container sx={{ mt: 4 }} maxWidth="sm">
-                <Typography
+                {/* <Typography
                     variant="h4"
                     gutterBottom
                     sx={{ textAlign: "center" }}
                 >
                     Road Map to Study React🚀
-                </Typography>
+                </Typography> */}
                 <Form add={add} />
                 <List>
                     {data

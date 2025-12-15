@@ -1,0 +1,78 @@
+npm i prisma @types/better-sqlite3 -D
+
+npm i @prisma/client @prisma/adapter-better-sqlite3 dotenv
+
+npx prisma init --datasource-provider sqlite --output ../generated/prisma
+
+==========================================================================
+// prisma/schema.prisma
+model User {
+    id    Int    @id @default(autoincrement())
+    email String @unique
+    name  String
+    posts Post[]
+}
+
+model Post {
+    id      Int    @id @default(autoincrement())
+    title   String
+    content String
+    user    User   @relation(fields: [userId], references: [id])
+    userId  Int
+}
+==========================================================================
+
+npx prisma migrate dev --name init
+
+npx prisma generate
+
+==========================================================================
+
+// libs/prisma.ts
+import "dotenv/config";
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaClient } from "../generated/prisma/client";
+
+const connectionString = `${process.env.DATABASE_URL}`;
+
+const adapter = new PrismaBetterSqlite3({ url: connectionString });
+const prisma = new PrismaClient({ adapter });
+
+export { prisma };
+
+==========================================================================
+
+// dev/create.ts
+import { prisma } from "../libs/prisma";
+
+prisma.user.create({
+    data: {
+        name: "Alice",
+        email: "alice@gmail.com",
+    }
+}).then(user => {
+    console.log(user);
+});
+
+async function create() {
+    const user = await prisma.user.create({
+        data: {
+            name: "Bob",
+            email: "bob@gmail.com",
+            posts: {
+                create: [
+                    { title: "A new post", content: "Some content" },
+                    { title: "Another post", content: "Another content" },
+                ]
+            }
+        },
+    });
+
+    console.log(user);
+}
+
+create();
+
+==========================================================================
+
+npx tsx dev/create.ts
