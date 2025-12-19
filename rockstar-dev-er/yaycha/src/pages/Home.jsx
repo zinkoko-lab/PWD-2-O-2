@@ -1,19 +1,17 @@
 import { useState } from "react";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
+import Item from "../components/Item";
+import Form from "../components/Form";
+import { useApp } from "../ThemedApp";
 
-import Header from "./components/Header";
-import Item from "./components/Item";
-import Form from "./components/Form";
-import { useApp } from "./ThemedApp";
-
-export default function App() {
+export default function Home() {
     const [data, setData] = useState([
         { id: 3, content: "Yay, interesting.", name: "Chris" },
         { id: 2, content: "React is fun.", name: "Bob" },
         { id: 1, content: "Hello, World!", name: "Alice" },
     ]);
 
-    const { showForm, setGlobalMsg } = useApp();
+    const { showForm } = useApp();
 
     const remove = (id) => {
         setData(data.filter((item) => item.id != id));
@@ -31,13 +29,10 @@ export default function App() {
 
     return (
         <Box>
-            <Header />
-            <Container maxWidth="sm" sx={{ mt: 4 }}>
-                {showForm && <Form add={add} />}
-                {data.map((item) => {
-                    return <Item key={item.id} item={item} remove={remove} />;
-                })}
-            </Container>
+            {showForm && <Form add={add} />}
+            {data.map((item) => {
+                return <Item key={item.id} item={item} remove={remove} />;
+            })}
         </Box>
     );
 }
