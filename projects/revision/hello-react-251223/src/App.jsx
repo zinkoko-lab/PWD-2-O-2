@@ -1,30 +1,22 @@
-import { useMemo, useState, useEffect } from "react";
 import { Divider, List } from "@mui/material";
 import Item from "./Item";
 import Form from "./Form";
 import Header from "./Header";
 import { Container, Box, Typography, CircularProgress } from "@mui/material";
 import SyncProblemIcon from "@mui/icons-material/SyncProblem";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+
+const api = "http://localhost:8800/tasks";
 
 function App() {
-    const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState();
-    const api = "http://localhost:8800/tasks";
-
-    useEffect(() => {
-        setIsLoading(true);
-        fetch(api)
-            .then(async (res) => {
-                const tasks = await res.json();
-                setData(tasks);
-                setIsLoading(false);
-            })
-            .catch(() => {
-                setIsLoading(false);
-                setError("Unable to fetch!");
-            });
-    }, []);
+    const queryClient = useQueryClient();
+    const { data, isLoading, error } = useQuery({
+        queryKey: ["tasks"],
+        queryFn: async () => {
+            const res = await fetch(api);
+            return res.json();
+        },
+    });
 
     const add = async (name) => {
         if (name === "") return false;
@@ -35,64 +27,58 @@ function App() {
                 "Content-Type": "application/json",
             },
         });
-        const task = await res.json();
-        setData([task, ...data]);
+        await queryClient.invalidateQueries(["tasks"]);
     };
 
-    const remove = (id) => {
-        fetch(`${api}/${id}`, { method: "DELETE" });
-        setData(data.filter((item) => item.id !== id));
+    const remove = async (id) => {
+        await fetch(`${api}/${id}`, { method: "DELETE" });
+        await queryClient.invalidateQueries(["tasks"]);
     };
 
-    const toggle = (id) => {
-        fetch(`${api}/${id}/toggle`, { method: "PUT" });
-        setData(
-            data.map((item) => {
-                if (item.id === id) {
-                    item.done = !item.done;
-                }
-                return item;
-            })
+    const toggle = async (id) => {
+        await fetch(`${api}/${id}/toggle`, { method: "PUT" });
+        await queryClient.invalidateQueries(["tasks"]);
+    };
+
+    if (isLoading) {
+        return (
+            <Box
+                sx={{
+                    mt: 10,
+                    display: "flex",
+                    justifyContent: "center",
+                }}
+            >
+                <Typography>
+                    Loading...
+                    <CircularProgress />
+                </Typography>
+            </Box>
         );
-    };
+    }
 
-    const count = useMemo(() => {
-        return data.filter((item) => !item.done).length;
-    }, [data]);
+    if (error) {
+        return (
+            <Box
+                sx={{
+                    mt: 10,
+                    display: "flex",
+                    justifyContent: "center",
+                }}
+            >
+                <Typography color="error" sx={{ mr: 2 }}>
+                    {error.message}
+                </Typography>
+                <SyncProblemIcon color="error" />
+            </Box>
+        );
+    }
 
     return (
         <>
-            <Header count={count} />
+            <Header count={data.filter((item) => !item.done).length} />
             <Container maxWidth="sm" sx={{ mt: 5 }}>
                 <Form add={add} />
-                {isLoading && (
-                    <Box
-                        sx={{
-                            mt: 5,
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Typography>
-                            Loading...
-                            <CircularProgress />
-                        </Typography>
-                    </Box>
-                )}
-                {error && (
-                    <Box
-                        sx={{
-                            mt: 5,
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Typography color="error" sx={{ mr: 2 }}>
-                            {error}
-                        </Typography>
-                        <SyncProblemIcon color="error" />
-                    </Box>
-                )}
                 <List>
                     {data
                         .filter((item) => !item.done)
