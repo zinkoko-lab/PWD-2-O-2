@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { OutlinedInput, IconButton } from "@mui/material";
+import { IconButton, OutlinedInput } from "@mui/material";
 import { Add as AddIcon } from "@mui/icons-material";
 
 export default function Form({ add }) {
@@ -14,15 +14,16 @@ export default function Form({ add }) {
             }}
         >
             <OutlinedInput
+                type="text"
                 inputRef={inputRef}
                 fullWidth
+                autoFocus="true"
                 endAdornment={
                     <IconButton type="submit">
                         <AddIcon />
                     </IconButton>
                 }
-                autoFocus="true"
-            ></OutlinedInput>
+            />
         </form>
     );
 }

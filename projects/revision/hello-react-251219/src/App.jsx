@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Item from "./Item";
 import Header from "./Header";
-import { Container } from "@mui/material";
+import { Container, Divider, List } from "@mui/material";
 import Form from "./Form";
 
 function App() {
@@ -12,9 +12,8 @@ function App() {
         { id: 1, name: "Egg", done: false },
     ]);
 
-    const add = () => {
-        const id = data[0].id + 1;
-        const name = inputRef.current.value.trim();
+    const add = (name) => {
+        const id = data[0] ? data[0].id + 1 : 1;
         if (name === "") return false;
         setData([{ id, name, done: false }, ...data]);
     };
@@ -34,7 +33,7 @@ function App() {
 
     return (
         <>
-            <Header />
+            <Header count={data.filter((item) => !item.done).length} />
             <Container
                 maxWidth="sm"
                 sx={{
@@ -42,7 +41,7 @@ function App() {
                 }}
             >
                 <Form add={add} />
-                <ul>
+                <List>
                     {data
                         .filter((item) => !item.done)
                         .map((item) => (
@@ -53,9 +52,9 @@ function App() {
                                 toggle={toggle}
                             />
                         ))}
-                </ul>
-                {data.length ? <hr /> : ""}
-                <ul>
+                </List>
+                {data.length ? <Divider /> : ""}
+                <List>
                     {data
                         .filter((item) => item.done)
                         .map((item) => (
@@ -66,7 +65,7 @@ function App() {
                                 toggle={toggle}
                             />
                         ))}
-                </ul>
+                </List>
             </Container>
         </>
     );

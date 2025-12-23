@@ -1,11 +1,15 @@
-import { AppBar, Toolbar, Typography, Badge, IconButton } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import {
-    LightMode as LightModeIcon,
     DarkMode as DarkModeIcon,
+    LightMode as LightModeIcon,
 } from "@mui/icons-material";
-
-import { AppContext } from "./AppProvider";
+import { IconButton } from "@mui/material";
 import { useContext } from "react";
+import { AppContext } from "./AppProvider";
+import { Badge } from "@mui/material";
 
 export default function Header({ count }) {
     const { mode, setMode } = useContext(AppContext);
@@ -13,11 +17,12 @@ export default function Header({ count }) {
     return (
         <AppBar position="static">
             <Toolbar>
-                <Typography sx={{ flexGrow: 1 }}>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     <Badge badgeContent={count} color="error">
                         Todo
                     </Badge>
                 </Typography>
+
                 {mode === "dark" ? (
                     <IconButton
                         color="inherit"
