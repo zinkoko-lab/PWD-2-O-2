@@ -1,26 +1,22 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import {
     DarkMode as DarkModeIcon,
     LightMode as LightModeIcon,
+    Menu as MenuIcon,
 } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
-import { useApp } from "./AppProvider";
-import { Badge } from "@mui/material";
+import { useApp } from "../AppProvider";
 
-export default function Header({ count }) {
-    const { mode, setMode } = useApp();
+export default function Header() {
+    const { mode, setMode, setOpenDrawer } = useApp();
 
     return (
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    <Badge badgeContent={count} color="error">
-                        Todo
-                    </Badge>
-                </Typography>
-
+                <IconButton onClick={() => setOpenDrawer(true)}>
+                    <MenuIcon />
+                </IconButton>
+                <Typography sx={{ flexGrow: 1, ml: 2 }}>SocailApp</Typography>
+                {/* LightMode or DarkMode IconButton */}
                 {mode === "dark" ? (
                     <IconButton
                         color="inherit"

@@ -10,6 +10,8 @@ export function useApp() {
 
 export default function AppProvider({ children }) {
     const [mode, setMode] = useState("dark");
+    const [openDrawer, setOpenDrawer] = useState(false);
+    const [auth, setAuth] = useState();
     const theme = useMemo(() => {
         return createTheme({
             palette: {
@@ -19,7 +21,9 @@ export default function AppProvider({ children }) {
     }, [mode]);
 
     return (
-        <AppContext.Provider value={{ mode, setMode }}>
+        <AppContext.Provider
+            value={{ mode, setMode, openDrawer, setOpenDrawer, auth, setAuth }}
+        >
             <ThemeProvider theme={theme}>
                 {children} <CssBaseline />
             </ThemeProvider>
