@@ -1,0 +1,14 @@
+Auth. Flow
+----------
+
+1. client -> username, password
+2. api check -> username, password
+3. ok -> api create access token
+4. api response access token
+
+Next Auth. Flow
+---------------
+
+1. client -> access token
+2. api -> check access token
+3. ok -> api authorize access
