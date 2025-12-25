@@ -1,8 +1,8 @@
 import { Box, Container, Snackbar } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import { Header } from "./components/Header";
+import Header from "./components/Header";
 import { useApp } from "./ThemedApp";
-import { AppDrawer } from "./components/AppDrawer";
+import AppDrawer from "./components/AppDrawer";
 
 export default function Template() {
     const { globalMsg } = useApp();

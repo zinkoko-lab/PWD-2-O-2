@@ -15,7 +15,7 @@ import {
 import { green } from "@mui/material/colors";
 import { useNavigate } from "react-router";
 
-export default function Post() {
+export default function Post({ post }) {
     const navigate = useNavigate();
 
     return (
@@ -30,19 +30,15 @@ export default function Post() {
                         }}
                     />
                     <Box>
-                        <Typography>Alice</Typography>
+                        <Typography>{post.user.name}</Typography>
                         <Typography color="success">
-                            A few second ago
+                            {post.createdAt}
                         </Typography>
                         <Typography
                             sx={{ mt: 1, cursor: "pointer" }}
-                            onClick={() => navigate("/show")}
+                            onClick={() => navigate(`/show/${post.id}`)}
                         >
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Nobis voluptatem quis sequi enim alias,
-                            incidunt, earum accusamus commodi aliquam
-                            consequuntur corrupti quam culpa id similique dicta
-                            quidem ipsa sint amet?
+                            {post.content}
                         </Typography>
                     </Box>
                 </Box>
@@ -58,7 +54,7 @@ export default function Post() {
                             <LikeIcon />
                         </IconButton>
                         <Button variant="text" size="small">
-                            10
+                            0
                         </Button>
                     </ButtonGroup>
                     <ButtonGroup>
@@ -66,7 +62,7 @@ export default function Post() {
                             <CommentIcon />
                         </IconButton>
                         <Button variant="text" size="small">
-                            10
+                            {post.comments ? post.comments.length : 0}
                         </Button>
                     </ButtonGroup>
                 </Box>

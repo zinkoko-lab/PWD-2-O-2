@@ -10,6 +10,9 @@ app.use(express.urlencoded());
 import postsRoute from "./routes/posts";
 app.use("/posts", postsRoute);
 
+import usersRoute from "./routes/users";
+app.use("/users", usersRoute);
+
 app.get("/", (req, res) => {
     res.json({ msg: "Social API up and running..." });
 });

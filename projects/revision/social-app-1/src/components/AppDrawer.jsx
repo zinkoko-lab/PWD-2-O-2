@@ -56,7 +56,12 @@ export default function AppDrawer() {
                             </ListItemButton>
                         </ListItem>
                         <ListItem>
-                            <ListItemButton onClick={() => setAuth(false)}>
+                            <ListItemButton
+                                onClick={() => {
+                                    setAuth(false);
+                                    navigate("/login");
+                                }}
+                            >
                                 <ListItemIcon>
                                     <LogoutIcon />
                                 </ListItemIcon>

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { prisma } from "../libs/prisma";
+import { auth } from "../middlewares/auth";
 
 const router = Router();
 
@@ -25,7 +26,9 @@ router.get("/:id", async (req, res) => {
         where: { id: Number(id) },
         include: {
             user: true,
-            comments: true,
+            comments: {
+                include: { user: true },
+            },
             likes: true,
         },
     });
@@ -33,6 +36,27 @@ router.get("/:id", async (req, res) => {
     if (!post) {
         return res.status(404).json({ msg: "Post not found." });
     }
+
+    res.json(post);
+});
+
+router.post("/", auth, async (req, res) => {
+    const user = (req as any).user;
+    const content = req.body?.content;
+
+    if (!content) {
+        res.status(400).json({ msg: "content is required." });
+    }
+
+    const post = await prisma.post.create({
+        data: {
+            content: content,
+            userId: user.id,
+        },
+        include: {
+            user: true,
+        },
+    });
 
     res.json(post);
 });

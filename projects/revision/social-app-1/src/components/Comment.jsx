@@ -1,7 +1,7 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 
-export default function Comment() {
+export default function Comment({ comment }) {
     return (
         <Box sx={{ p: 2, border: "1px solid #66666680" }}>
             <Box sx={{ display: "flex", gap: 2 }}>
@@ -13,14 +13,9 @@ export default function Comment() {
                     }}
                 />
                 <Box>
-                    <Typography>Bob</Typography>
-                    <Typography color="success">A few second ago</Typography>
-                    <Typography sx={{ mt: 1 }}>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Nobis voluptatem quis sequi enim alias, incidunt,
-                        earum accusamus commodi aliquam consequuntur corrupti
-                        quam culpa id similique dicta quidem ipsa sint amet?
-                    </Typography>
+                    <Typography>{comment.user.name}</Typography>
+                    <Typography color="success">{comment.createdAt}</Typography>
+                    <Typography sx={{ mt: 1 }}>{comment.content}</Typography>
                 </Box>
             </Box>
         </Box>

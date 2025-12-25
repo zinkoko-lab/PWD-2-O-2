@@ -12,7 +12,7 @@ import App from "./App";
 import { deepPurple, grey } from "@mui/material/colors";
 import { createBrowserRouter } from "react-router-dom";
 import Template from "./Template";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
 
 export const AppContext = createContext();
 

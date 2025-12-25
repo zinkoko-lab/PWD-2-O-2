@@ -1,37 +1,46 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-
 import {
-	Menu as MenuIcon,
-	LightMode as LightModeIcon,
-	DarkMode as DarkModeIcon,
+    DarkMode as DarkModeIcon,
+    LightMode as LightModeIcon,
+    Menu as MenuIcon,
+    ArrowBack as BackIcon,
 } from "@mui/icons-material";
-
 import { useApp } from "../AppProvider";
+import { useLocation, useNavigate } from "react-router";
 
 export default function Header() {
-	const { mode, setMode, setOpenDrawer } = useApp();
+    const { mode, setMode, setOpenDrawer } = useApp();
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
 
-	return (
-		<AppBar position="static">
-			<Toolbar>
-				<IconButton onClick={() => setOpenDrawer(true)}>
-					<MenuIcon />
-				</IconButton>
-				<Typography sx={{ flexGrow: 1, ml: 2 }}>Social App</Typography>
-				{mode === "dark" ? (
-					<IconButton
-						onClick={() => setMode("light")}
-						color="inherit">
-						<LightModeIcon />
-					</IconButton>
-				) : (
-					<IconButton
-						onClick={() => setMode("dark")}
-						color="inherit">
-						<DarkModeIcon />
-					</IconButton>
-				)}
-			</Toolbar>
-		</AppBar>
-	);
+    return (
+        <AppBar position="sticky">
+            <Toolbar>
+                {pathname === "/" ? (
+                    <IconButton onClick={() => setOpenDrawer(true)}>
+                        <MenuIcon />
+                    </IconButton>
+                ) : (
+                    <IconButton onClick={() => navigate("/")}>
+                        <BackIcon />
+                    </IconButton>
+                )}
+
+                <Typography sx={{ flexGrow: 1, ml: 2 }}>SocialApp</Typography>
+                {/* LightMode or DarkMode IconButton */}
+                {mode === "dark" ? (
+                    <IconButton
+                        color="inherit"
+                        onClick={() => setMode("light")}
+                    >
+                        <LightModeIcon />
+                    </IconButton>
+                ) : (
+                    <IconButton color="inherit" onClick={() => setMode("dark")}>
+                        <DarkModeIcon />
+                    </IconButton>
+                )}
+            </Toolbar>
+        </AppBar>
+    );
 }
