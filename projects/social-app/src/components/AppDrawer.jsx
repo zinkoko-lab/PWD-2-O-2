@@ -8,7 +8,7 @@ import {
     ListItemText,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { useApp } from "../AppProvider";
+import { useApp } from "../AppContext";
 import {
     Home as HomeIcon,
     Login as LoginIcon,

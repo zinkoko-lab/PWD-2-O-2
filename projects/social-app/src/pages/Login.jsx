@@ -2,7 +2,7 @@ import { Alert, Box, Button, OutlinedInput, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { useApp } from "../AppProvider";
+import { useApp } from "../AppContext";
 
 export default function Login() {
     const api = "http://localhost:8800";

@@ -5,7 +5,7 @@ import {
     Menu as MenuIcon,
     ArrowBack as BackIcon,
 } from "@mui/icons-material";
-import { useApp } from "../AppProvider";
+import { useApp } from "../AppContext";
 import { useLocation, useNavigate } from "react-router";
 
 export default function Header() {

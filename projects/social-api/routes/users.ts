@@ -2,6 +2,7 @@ import { Router } from "express";
 import { prisma } from "../libs/prisma";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import { auth } from "../middlewares/auth";
 
 const router = Router();
 
@@ -77,6 +78,15 @@ router.post("/login", async (req, res) => {
 
     // else -> res.status(401).json({msg: "Invalid username or password."})
     return res.status(401).json({ msg: "Invalid username and password." });
+});
+
+router.get("/verify", auth, async (req, res) => {
+    const { id } = (req as any).user;
+    const user = await prisma.user.findUnique({
+        where: { id },
+    });
+
+    res.json(user);
 });
 
 export default router;
