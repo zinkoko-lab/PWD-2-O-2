@@ -32,7 +32,7 @@ export default function Post({ post }) {
                     <Box>
                         <Typography>{post.user.name}</Typography>
                         <Typography color="success">
-                            {post.createdAt}
+                            {new Date(post.createdAt).toLocaleString()}
                         </Typography>
                         <Typography
                             sx={{ mt: 1, cursor: "pointer" }}

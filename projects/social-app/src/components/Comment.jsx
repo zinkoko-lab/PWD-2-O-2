@@ -14,7 +14,9 @@ export default function Comment({ comment }) {
                 />
                 <Box>
                     <Typography>{comment.user.name}</Typography>
-                    <Typography color="success">{comment.createdAt}</Typography>
+                    <Typography color="success">
+                        {new Date(comment.createdAt).toLocaleString()}
+                    </Typography>
                     <Typography sx={{ mt: 1 }}>{comment.content}</Typography>
                 </Box>
             </Box>

@@ -6,7 +6,7 @@ import { useApp } from "../AppContext";
 
 export default function Login() {
     const api = "http://localhost:8800";
-    const [loginError, setLoginError] = useState();
+    const [loginError, setLoginError] = useState(null);
     const {
         register,
         handleSubmit,
@@ -25,7 +25,8 @@ export default function Login() {
         });
 
         if (!res.ok) {
-            setLoginError(true);
+            const errorData = await res.json();
+            setLoginError(errorData.msg || "Login failed");
             return false;
         }
 
@@ -40,7 +41,7 @@ export default function Login() {
             <Typography variant="h3">Login</Typography>
             {loginError && (
                 <Alert severity="warning" sx={{ mt: 2 }}>
-                    Something went wrong.
+                    {loginError}
                 </Alert>
             )}
             <form onSubmit={handleSubmit(login)}>

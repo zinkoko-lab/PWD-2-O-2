@@ -60,6 +60,7 @@ export default function AppDrawer() {
                                 onClick={() => {
                                     setAuth(false);
                                     navigate("/login");
+                                    localStorage.removeItem("token");
                                 }}
                             >
                                 <ListItemIcon>

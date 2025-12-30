@@ -7,6 +7,9 @@ async function main() {
     // console.log(`Password: ${password}`);
     // const hash = await bcrypt.hash(password, 10);
     // console.log(`HashValue: ${hash}`);
+
+    // const match = await bcrypt.compare("apple", hash);
+    // console.log(match);
     // console.log(faker.person.fullName());
 
     const content = "some content";

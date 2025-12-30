@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 
 export default function Login() {
     const api = "http://localhost:8800";
-    const [registerError, setRegisterError] = useState();
+    const [registerError, setRegisterError] = useState(null);
     const {
         register,
         handleSubmit,
@@ -24,7 +24,8 @@ export default function Login() {
         });
 
         if (!res.ok) {
-            setRegisterError(true);
+            const errorData = await res.json();
+            setRegisterError(errorData.msg || "Register failed");
             return false;
         }
 
@@ -36,7 +37,7 @@ export default function Login() {
             <Typography variant="h3">Register</Typography>
             {registerError && (
                 <Alert severity="warning" sx={{ mt: 2 }}>
-                    Something went wrong.
+                    {registerError}
                 </Alert>
             )}
             <form onSubmit={handleSubmit(create)}>

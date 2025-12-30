@@ -1,12 +1,12 @@
 import { Router } from "express";
 import { prisma } from "../libs/prisma";
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import { auth } from "../middlewares/auth";
 
 const router = Router();
 
-// user create
+// user create route
 router.post("/", async (req, res) => {
     const name = req.body?.name;
     const username = req.body?.username;
@@ -32,23 +32,23 @@ router.post("/", async (req, res) => {
     } catch (err) {
         return res
             .status(400)
-            .json({ msg: "That username is already registered" });
+            .json({ msg: "That username is already registered." });
     }
 });
 
 // user login
 router.post("/login", async (req, res) => {
     // client -> username & password
-    const username = req.body?.username;
-    const password = req.body?.password;
+    const { username, password } = req.body ?? {};
 
+    // if (!username || !password) -> error(username and password are required.)
     if (!username || !password) {
         return res
             .status(400)
             .json({ msg: "username and password are required." });
     }
 
-    // api find -> user @ username === username
+    // username & password -> api find user data from db
     const user = await prisma.user.findUnique({
         where: { username: username },
         select: {
@@ -60,38 +60,38 @@ router.post("/login", async (req, res) => {
         },
     });
 
-    // api check -> user.password === password -> if ok, calculate token
-    if (user) {
-        if (await bcrypt.compare(password, user.password)) {
-            const token = jwt.sign(
-                { id: user.id },
-                process.env.JWT_SECRET as string
-            );
-
-            // if ok above steps -> res.json(user data, token)
-            return res.json({
-                user: {
-                    id: user.id,
-                    name: user.name,
-                    username: user.username,
-                    bio: user.bio,
-                },
-                token: token,
-            });
-        }
+    // 2. if User was not found -> return 401 and error msg.
+    if (!user) {
+        return res.status(401).json({ msg: "Invalid username or password." });
     }
 
-    // else -> res.status(401).json({msg: "Invalid username or password."})
-    return res.status(401).json({ msg: "Invalid username and password." });
+    // 2. if User was found
+    // check password -> not ok -> return error(Invalid username or password.)
+    const isValid = await bcrypt.compare(password, (user as any).password);
+    if (!isValid) {
+        return res.status(401).json({ msg: "Invalid username or password." });
+    }
+
+    // check password -> ok -> return user data & token
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string);
+    return res.json({
+        user: {
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            bio: user.bio,
+        },
+        token: token,
+    });
 });
 
+// user verify
 router.get("/verify", auth, async (req, res) => {
     const { id } = (req as any).user;
     const user = await prisma.user.findUnique({
-        where: { id },
+        where: { id: id },
     });
-
-    res.json(user);
+    return res.json(user);
 });
 
 export default router;
