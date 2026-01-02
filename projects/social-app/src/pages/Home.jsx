@@ -1,12 +1,11 @@
 import { Box, CircularProgress, Typography } from "@mui/material";
 import Post from "../components/Post";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import SyncProblemIcon from "@mui/icons-material/SyncProblem";
 
 const api = "http://localhost:8800";
 
 export default function Home() {
-    const queryClient = useQueryClient();
     const {
         data: posts,
         isLoading,

@@ -1,22 +1,27 @@
-// app/_layout.tsx
+import AppProvider from "@/components/app-provider";
+import { globalStyles } from "@/components/theme";
 import { Stack } from "expo-router";
+import { View } from "react-native";
 
 export default function RootLayout() {
     return (
-        <Stack>
-            <Stack.Screen
-                name="(home)"
-                options={{
-                    headerShown: false,
-                }}
-            />
-            <Stack.Screen
-                name="form"
-                options={{
-                    presentation: "modal",
-                    title: "New Post",
-                }}
-            />
-        </Stack>
+        <View style={globalStyles.page}>
+            <AppProvider>
+                <Stack>
+                    <Stack.Screen
+                        name="(home)"
+                        options={{ title: "Home", headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="form"
+                        options={{ presentation: "modal", title: "new post" }}
+                    />
+                    <Stack.Screen
+                        name="view/[id]"
+                        options={{ title: "Post Detail" }}
+                    />
+                </Stack>
+            </AppProvider>
+        </View>
     );
 }

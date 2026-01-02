@@ -1,11 +1,11 @@
-import { useApp } from "@/components/app-context";
 import Post from "@/components/post";
 import { PostType } from "@/types/global";
 import { useQuery } from "@tanstack/react-query";
 import { ActivityIndicator, ScrollView, Text, View } from "react-native";
 
+const api = "http://192.168.10.101:8800";
+
 export default function Profile() {
-    const { api } = useApp();
     const {
         data: posts,
         isLoading,

@@ -1,10 +1,9 @@
-// app/(home)/settings.tsx
 import { Text, View } from "react-native";
 
-export default function Settings() {
+export default function Profile() {
     return (
         <View
-            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
             <Text style={{ fontWeight: "bold", fontSize: 24 }}>
                 Settings Page

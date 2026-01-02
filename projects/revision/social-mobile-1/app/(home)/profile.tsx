@@ -5,7 +5,9 @@ export default function Profile() {
         <View
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
-            <Text style={{ fontWeight: "bold", fontSize: 24 }}>Form Page</Text>
+            <Text style={{ fontWeight: "bold", fontSize: 24 }}>
+                Profile Page
+            </Text>
         </View>
     );
 }

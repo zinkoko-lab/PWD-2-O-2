@@ -27,6 +27,7 @@ router.get("/:id", async (req, res) => {
         include: {
             user: true,
             comments: {
+                orderBy: { id: "desc" },
                 include: { user: true },
             },
             likes: true,
@@ -59,6 +60,33 @@ router.post("/", auth, async (req, res) => {
     });
 
     res.json(post);
+});
+
+router.post("/:id/like", auth, async (req, res) => {
+    const { id: userId } = (req as any).user;
+    const postId = Number(req.params.id);
+
+    const existing = await prisma.like.findUnique({
+        where: {
+            userId_postId: {
+                userId,
+                postId,
+            },
+        },
+    });
+
+    if (existing) {
+        await prisma.like.delete({
+            where: { id: existing.id },
+        });
+        return res.json({ liked: false });
+    }
+
+    const like = await prisma.like.create({
+        data: { userId, postId },
+    });
+
+    return res.json({ liked: true, like });
 });
 
 export default router;

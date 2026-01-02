@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
         },
     });
 
-    // 2. if User was not found -> return 401 and error msg.
+    // 1. if User was not found -> return 401 and error msg.
     if (!user) {
         return res.status(401).json({ msg: "Invalid username or password." });
     }

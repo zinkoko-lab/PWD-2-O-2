@@ -49,4 +49,9 @@ model Like {
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int
   createdAt DateTime @default(now())
+
+  @@unique([userId, postId]) // (userId, postId) の組み合わせを一意にする
 }
+
+// schema.prisma の内容を変えたら、migrateを実行して！
+// npx prisma migrate dev -n some_changes

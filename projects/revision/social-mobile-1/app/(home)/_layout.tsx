@@ -1,19 +1,9 @@
-import { tabBar } from "@/components/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
 
 export default function RootLayout() {
     return (
-        <Tabs
-            screenOptions={{
-                tabBarActiveTintColor: tabBar.activeTint,
-                tabBarInactiveTintColor: tabBar.inactiveTint,
-                tabBarStyle: {
-                    backgroundColor: tabBar.background,
-                    borderTopColor: tabBar.borderTopColor,
-                },
-            }}
-        >
+        <Tabs>
             <Tabs.Screen
                 name="index"
                 options={{
