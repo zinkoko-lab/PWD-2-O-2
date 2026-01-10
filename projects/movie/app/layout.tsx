@@ -6,6 +6,7 @@ import { Clapperboard, Play } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { GenreType } from "@/.next/types/global";
+import { redirect } from "next/navigation";
 
 async function fetchGenres(): Promise<GenreType[]> {
     const res = await fetch("https://api.themoviedb.org/3/genre/movie/list", {
@@ -16,6 +17,13 @@ async function fetchGenres(): Promise<GenreType[]> {
 
     const data = await res.json();
     return data.genres;
+}
+
+async function search(formData: FormData) {
+    "use server";
+
+    const q = formData.get("q");
+    redirect(`/search?q=${q}`);
 }
 
 const geistSans = Geist({
@@ -49,8 +57,9 @@ export default async function RootLayout({
                         <Clapperboard />
                         Next Movie
                     </h1>
-                    <form className="flex items-center gap-1">
-                        <Input placeholder="Search" />
+
+                    <form action={search} className="flex items-center gap-1">
+                        <Input name="q" placeholder="Search" />
                         <Button>Search</Button>
                     </form>
                 </header>

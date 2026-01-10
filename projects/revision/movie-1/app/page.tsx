@@ -23,7 +23,7 @@ async function fetchPopular(): Promise<MovieType[]> {
 
         return data.results;
     } catch (error) {
-        console.error("fetchGenre failed: ", error);
+        console.error("fetchPopular failed: ", error);
         return [];
     }
 }
